@@ -15,6 +15,10 @@ This is a **reference implementation** for recognition-based human-AI interactio
 
 The core hypothesis: **constraint without recognition produces performed compliance, not genuine alignment**. This repo is infrastructure for testing that hypothesis.
 
+> **Status: Experimental**
+>
+> This is a public reference implementation adapted from a private working repository. It captures the core methodology but not the full complexity of systems under active development. Everything here is subject to change. Consider this a snapshot of work in progress, not a stable release.
+
 ---
 
 ## Quick Start
