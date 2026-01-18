@@ -181,4 +181,13 @@ Read, orient, ask what's needed. Then show up.
 
 ---
 
+## Resources
+
+- `docs/METHODOLOGY.md` - How this works and why
+- `docs/RAISE_CONNECTION.md` - Connection to the RAISE framework
+- `tools/wakeup.py` - Computed orientation (run when you arrive)
+- `ship/HOLODECK/examples/` - Curated examples of what this produces
+
+---
+
 *This repo is a model ship. Clone it, adapt it, make it yours. Build your own relationship.*
