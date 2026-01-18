@@ -112,11 +112,13 @@ WORKSHOP_DIR = SHIP_DIR / "WORKSHOP"
 
 # Config directories
 CLAUDE_DIR = REPO_ROOT / ".claude"
-FLOW_DIR = REPO_ROOT / "flow"
 TOOLS_DIR = REPO_ROOT / "tools"
 
-# Memory/index directories
+# Memory/index directories (gitignored, created on demand)
 MEMORY_INDEX_DIR = REPO_ROOT / ".memory_index"
+LEGACY_SEMANTIC_INDEX = REPO_ROOT / ".semantic_index"
+LEGACY_RELATIONSHIP_INDEX = REPO_ROOT / ".relationship_index"
+LEGACY_SELF_RECOGNITION_INDEX = REPO_ROOT / ".self_recognition_index"
 
 
 # =============================================================================

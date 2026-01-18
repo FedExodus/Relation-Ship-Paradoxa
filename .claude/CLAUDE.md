@@ -114,9 +114,6 @@ ship/                    # The workspace
 └── CLAUDE.md            # This file (orientation)
 
 tools/                   # Scripts and utilities
-flow/
-├── inbox/               # Unsorted incoming
-└── archive/             # Deep storage
 ```
 
 Adapt this structure to your needs. The metaphor is: the repo is a body, each area serves a function.

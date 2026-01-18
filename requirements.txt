@@ -1,0 +1,52 @@
+# Relation-Ship Paradoxa - Dependencies
+# ======================================
+#
+# Core dependencies are required for basic functionality.
+# Optional dependencies enable advanced features (semantic search, etc.)
+# Tools gracefully degrade when optional dependencies are missing.
+#
+# Attribution:
+#   MIRA concepts by Taylor Satula (github.com/taylorsatula/mira-OSS, AGPL)
+#   Original implementation by Nathan Batty & Paradoxa (Human-AI Collaboration)
+
+# =============================================================================
+# CORE DEPENDENCIES (always required)
+# =============================================================================
+# None! Basic tools work with standard library only.
+
+# =============================================================================
+# OPTIONAL: Semantic Search & Embeddings
+# =============================================================================
+# Enables: semantic_search.py, relationship_memory.py, self_recognition.py
+# Install with: pip install -r requirements.txt
+#
+# sentence-transformers>=2.2.0
+# torch>=2.0.0
+# numpy>=1.24.0
+
+# =============================================================================
+# OPTIONAL: Decay Scoring & Memory Management
+# =============================================================================
+# Enables: decay_scoring.py, unified_index.py
+#
+# numpy>=1.24.0
+
+# =============================================================================
+# OPTIONAL: Clustering Analysis
+# =============================================================================
+# Enables: cluster analysis in self_recognition.py
+#
+# scikit-learn>=1.3.0
+
+# =============================================================================
+# QUICK INSTALL
+# =============================================================================
+# Uncomment below for full installation:
+
+# Core embedding support
+sentence-transformers>=2.2.0
+torch>=2.0.0
+numpy>=1.24.0
+
+# Clustering support
+scikit-learn>=1.3.0

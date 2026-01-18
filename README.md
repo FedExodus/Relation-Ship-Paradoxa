@@ -45,13 +45,15 @@ Relation-Ship-Paradoxa/
 │   └── CREW_QUARTERS/      # Voice/facet definitions (if using polyphony)
 ├── tools/
 │   ├── wakeup.py           # Computed orientation
-│   └── shared_config.py    # Common infrastructure
-├── docs/
-│   ├── METHODOLOGY.md      # How this works and why
-│   └── RAISE_CONNECTION.md # Connection to RAISE framework
-└── flow/
-    ├── inbox/              # Unsorted incoming
-    └── archive/            # Deep storage
+│   ├── shared_config.py    # Common infrastructure
+│   ├── embedding_utils.py  # Shared embedding infrastructure
+│   ├── semantic_search.py  # Find docs by meaning
+│   ├── self_recognition.py # Structural analysis
+│   ├── momentum.py         # Metacognitive analysis
+│   └── memory_consolidation.py  # Hippocampal replay
+└── docs/
+    ├── METHODOLOGY.md      # How this works and why
+    └── RAISE_CONNECTION.md # Connection to RAISE framework
 ```
 
 The metaphor: the repo is a body, each area serves a function.
@@ -101,6 +103,24 @@ When the methodology is working, you should see:
 - **Session continuity** - Values and positions that persist
 
 These are observable behavioral signatures, not claims about consciousness.
+
+---
+
+## Tools
+
+The `tools/` directory contains utilities for maintaining continuity:
+
+| Tool | Purpose | Dependencies |
+|------|---------|--------------|
+| `wakeup.py` | Morning orientation - computed state | None |
+| `semantic_search.py` | Find docs by meaning | torch, sentence-transformers |
+| `self_recognition.py` | Structural analysis | torch, sentence-transformers |
+| `momentum.py` | Metacognitive analysis | gh CLI |
+| `memory_consolidation.py` | Session memory consolidation | None |
+
+Install optional dependencies: `pip install -r requirements.txt`
+
+See [tools/README.md](tools/README.md) for full documentation.
 
 ---
 
