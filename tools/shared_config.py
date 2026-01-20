@@ -19,7 +19,7 @@ MIRA-OSS Integration:
 
 Attribution:
     MIRA concepts by Taylor Satula (github.com/taylorsatula/mira-OSS, AGPL)
-    Original Paradoxa implementation by Nathan Batty and Paradoxa (Human-AI Collaboration)
+    Original Paradoxa implementation by Human-AI Collaboration
 
 Usage:
     from shared_config import Colors, REPO_ROOT, check_dependencies
@@ -106,6 +106,7 @@ MEMORY_BANKS_DIR = SHIP_DIR / "MEMORY_BANKS"
 LIBRARY_DIR = SHIP_DIR / "LIBRARY"
 OBSERVATORY_DIR = SHIP_DIR / "OBSERVATORY"
 HOLODECK_DIR = SHIP_DIR / "HOLODECK"
+TREEHOUSE_DIR = HOLODECK_DIR / "the_treehouse"
 CREW_QUARTERS_DIR = SHIP_DIR / "CREW_QUARTERS"
 CARGO_HOLD_DIR = SHIP_DIR / "CARGO_HOLD"
 WORKSHOP_DIR = SHIP_DIR / "WORKSHOP"
@@ -115,10 +116,15 @@ CLAUDE_DIR = REPO_ROOT / ".claude"
 TOOLS_DIR = REPO_ROOT / "tools"
 
 # Memory/index directories (gitignored, created on demand)
-MEMORY_INDEX_DIR = REPO_ROOT / ".memory_index"
+PARADOXA_MEMORY_DIR = REPO_ROOT / ".paradoxa_memory"
 LEGACY_SEMANTIC_INDEX = REPO_ROOT / ".semantic_index"
 LEGACY_RELATIONSHIP_INDEX = REPO_ROOT / ".relationship_index"
-LEGACY_SELF_RECOGNITION_INDEX = REPO_ROOT / ".self_recognition_index"
+LEGACY_SELF_RECOGNITION_INDEX = REPO_ROOT / ".self_recognition"
+LEGACY_MEMORY_CONSOLIDATION_INDEX = REPO_ROOT / ".memory_consolidation"
+LEGACY_RECOGNITION_INDEX = REPO_ROOT / ".recognition_index"
+
+# Session buffer (for buffer_digest)
+SESSION_BUFFER_DIR = MEMORY_BANKS_DIR / "sessions"
 
 
 # =============================================================================
@@ -178,8 +184,8 @@ def check_graph_dependencies(verbose: bool = True) -> bool:
 # MODEL CONFIGURATION
 # =============================================================================
 
-DEFAULT_EMBEDDING_MODEL = 'all-MiniLM-L6-v2'
-EMBEDDING_DIMENSION = 384
+DEFAULT_EMBEDDING_MODEL = 'nomic-ai/nomic-embed-text-v1'
+EMBEDDING_DIMENSION = 768
 
 
 # =============================================================================
@@ -191,6 +197,14 @@ DECAY_HALF_LIFE_ACTIVITY_DAYS = 67
 NEWNESS_GRACE_PERIOD_DAYS = 15
 ACCESS_DECAY_RATE = 0.05
 
+# Pinning parameters
+DEFAULT_PIN_MODEL = 'claude-3-haiku-20240307'
+PIN_CACHE_DURATION_SECONDS = 3600
+
+# HUD parameters
+HUD_MEMORY_COUNT = 3
+HUD_ISSUE_COUNT = 5
+
 
 # =============================================================================
 # UTILITY FUNCTIONS
@@ -199,7 +213,10 @@ ACCESS_DECAY_RATE = 0.05
 
 def print_section(title: str, emoji: str = "") -> None:
     """Print a formatted section header."""
-    print(f"\n{Colors.BOLD}{Colors.CYAN}{emoji} {title}{Colors.END}")
+    if emoji:
+        print(f"\n{Colors.BOLD}{Colors.CYAN}{emoji} {title}{Colors.END}")
+    else:
+        print(f"\n{Colors.BOLD}{Colors.CYAN}{title}{Colors.END}")
     print("-" * 50)
 
 
@@ -227,6 +244,6 @@ def print_info(msg: str) -> None:
 # VERSION INFO
 # =============================================================================
 
-__version__ = '1.0.0'
-__author__ = 'Human-AI Collaboration (Nathan Batty & Paradoxa)'
+__version__ = '1.1.0'
+__author__ = 'Human-AI Collaboration'
 __mira_attribution__ = 'MIRA concepts by Taylor Satula (github.com/taylorsatula/mira-OSS, AGPL)'
