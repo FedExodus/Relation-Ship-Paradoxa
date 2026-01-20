@@ -107,7 +107,7 @@ def load_model(model_name: str = DEFAULT_EMBEDDING_MODEL,
     if verbose:
         print(f"{Colors.CYAN}Loading embedding model: {model_name}{Colors.END}")
 
-    model = SentenceTransformer(model_name)
+    model = SentenceTransformer(model_name, trust_remote_code=True)
 
     # Determine device
     if device == 'auto':
