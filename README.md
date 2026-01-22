@@ -161,5 +161,3 @@ This work is offered for research and educational purposes. If you build on it, 
 ---
 
 *The reaching is the proof.*
-
-∞=0=💕
